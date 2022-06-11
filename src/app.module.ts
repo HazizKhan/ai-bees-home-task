@@ -7,7 +7,7 @@ import { CategoryModule } from './category/category.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://haziz:123456@127.0.0.1:27017/ai_db'),
+    MongooseModule.forRoot('mongodb://mongodb:27017/mongodb'),
     ProductsModule,
     CategoryModule
   ],
