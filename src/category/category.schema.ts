@@ -4,13 +4,12 @@ export type CategoryType = Category & Document;
 
 @Schema()
 export class Category {
-  @Prop({required:true})
+  @Prop({ required: true })
   name: string;
-  @Prop({required:false})
-  parentId:Types.ObjectId
-  @Prop({required:false})
-  discount:number
+  @Prop({ required: false })
+  parentId: Types.ObjectId;
+  @Prop({ required: false })
+  discount: number;
 }
-
 
 export const CategorySchema = SchemaFactory.createForClass(Category);

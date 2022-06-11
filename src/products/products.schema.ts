@@ -4,12 +4,12 @@ export type ProductsType = Products & Document;
 
 @Schema()
 export class Products {
-  @Prop({required:true})
+  @Prop({ required: true })
   name: string;
-  @Prop({required:true})
-  categoryId:Types.ObjectId
-  @Prop({required:false})
-  discount:number
+  @Prop({ required: true })
+  categoryId: Types.ObjectId;
+  @Prop({ required: false })
+  discount: number;
 }
 
 export const ProductSchema = SchemaFactory.createForClass(Products);

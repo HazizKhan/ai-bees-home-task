@@ -9,7 +9,7 @@ import { CategoryModule } from './category/category.module';
   imports: [
     MongooseModule.forRoot('mongodb://mongodb:27017/mongodb'),
     ProductsModule,
-    CategoryModule
+    CategoryModule,
   ],
   controllers: [AppController],
   providers: [AppService],

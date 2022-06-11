@@ -1,10 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import {
-    Products,
-  ProductsType,
-} from './products.schema'
+import { Products, ProductsType } from './products.schema';
 @Injectable()
 export class ProductsService {
   constructor(
@@ -12,7 +9,7 @@ export class ProductsService {
     private productModel: Model<ProductsType>,
   ) {}
 
-  async findAll(): Promise<Products[]>{
-    return this.productModel.find().exec()
+  async findAll(): Promise<Products[]> {
+    return this.productModel.find().exec();
   }
 }
