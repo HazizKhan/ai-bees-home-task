@@ -6,7 +6,7 @@ export type CategoryType = Category & Document;
 export class Category {
   @Prop({ required: true })
   name: string;
-  @Prop({ required: false })
+  @Prop({ required: false, ref: Category.name })
   parentId: Types.ObjectId;
   @Prop({ required: false })
   discount: number;

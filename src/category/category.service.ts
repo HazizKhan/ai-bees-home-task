@@ -6,10 +6,14 @@ import { Category, CategoryType } from './category.schema';
 export class CategoryService {
   constructor(
     @InjectModel(Category.name)
-    private productModel: Model<CategoryType>,
+    private categoryModel: Model<CategoryType>,
   ) {}
 
   async findAll(): Promise<Category[]> {
-    return this.productModel.find().exec();
+    return this.categoryModel.find().exec();
+  }
+
+  async addMany(docs: Array<CategoryType>) {
+    return this.categoryModel.insertMany(docs);
   }
 }
