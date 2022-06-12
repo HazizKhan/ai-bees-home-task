@@ -10,8 +10,10 @@ import { SeedModule } from './seed/seed.module';
 @Module({
   imports: [
     MongooseModule.forRoot('mongodb://mongodb:27017/mongodb'),
-    ProductModule,
+    ProductsModule,
     CategoryModule,
+    AuthModule,
+    UsersModule,
     SeedModule,
     CommandModule,
   ],
