@@ -2,18 +2,18 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Command } from 'nestjs-command';
-import { Category, CategoryType } from 'src/category/category.schema';
+import { Category, CategoryType } from '../category/category.schema';
 
-import { CategoryService } from 'src/category/category.service';
-import { ProductService } from 'src/products/product.service';
-import { Product, ProductType } from 'src/products/product.schema';
-import { products as mockProducts } from 'src/mock/products';
+import { CategoryService } from '../category/category.service';
+import { ProductService } from '../products/product.service';
+import { Product, ProductType } from '../products/product.schema';
+import { products as mockProducts } from '../mock/products';
 import {
   baseCategories,
   childCategories,
   childSiblingCategories,
   subChildCategories,
-} from 'src/mock/categories';
+} from '../mock/categories';
 
 @Injectable()
 export class SeedService {
