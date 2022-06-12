@@ -1,16 +1,13 @@
-import { Controller, Get, Param, Res } from '@nestjs/common';
+import { Controller, Get, Param, Res, UseGuards } from '@nestjs/common';
 import { Response } from 'express';
+import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { ProductService } from './product.service';
 
 @Controller('product')
 export class ProductController {
   constructor(private readonly productsService: ProductService) {}
 
-  @Get()
-  getHello(): string {
-    return 'hello from product controller';
-  }
-
+  @UseGuards(JwtAuthGuard)
   @Get('discount/:id')
   async getDiscount(@Res() res: Response, @Param('id') id: string) {
     try {

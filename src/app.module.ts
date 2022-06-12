@@ -6,11 +6,13 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ProductModule } from './products/product.module';
 import { CategoryModule } from './category/category.module';
 import { SeedModule } from './seed/seed.module';
+import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
     MongooseModule.forRoot('mongodb://mongodb:27017/mongodb'),
-    ProductsModule,
+    ProductModule,
     CategoryModule,
     AuthModule,
     UsersModule,
