@@ -12,6 +12,20 @@ COPY . .
 
 RUN npm run build
 
+FROM node:12.19.0-alpine3.9 AS e2e
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm install --only=e2e
+
+COPY . .
+
+COPY --from=development /usr/src/app/dist ./dist
+
+CMD ["node", "dist/main"]
+
 FROM node:12.19.0-alpine3.9 as production
 
 ARG NODE_ENV=production
