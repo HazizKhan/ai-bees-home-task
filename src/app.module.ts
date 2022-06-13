@@ -11,7 +11,7 @@ import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://mongodb:27017/mongodb'),
+    MongooseModule.forRoot(process.env.DB_CONNECTION_STRING),
     ProductModule,
     CategoryModule,
     AuthModule,

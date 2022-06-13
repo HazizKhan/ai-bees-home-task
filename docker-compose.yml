@@ -18,8 +18,8 @@ services:
       - .:/usr/src/app
       - /usr/src/app/node_modules
     restart: unless-stopped
-    environment:
-      WAIT_HOSTS: mongodb:27017
+    env_file:
+      - .env
   mongodb:
     image : mongo:latest
     container_name: mongodb
