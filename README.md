@@ -2,6 +2,8 @@
 - [Introduction](#Introduction)
 - [Tech Stack](#TechStack)
 - [Setup](#Setup)
+- [Getting Started](#Getting Started)
+- [APIs](#APIs)
 
 ## Introduction
 
@@ -16,9 +18,78 @@ Test done by Haziz Feroz Khan()
 
 ## Setup
 
-1. install nestJs - `npm i -g @nestjs/cli`
-2. Install Docker
-3. convert `.env.local` to `.env`
-3. Start development server `sudo docker-compose up dev`
-4. If you want to build again then try this command `sudo docker-compose up --build dev`
+1. Install dependecies with `npm install` or `yarn`
+2. Add `.env` file for reference you can check `.env.sample`
 
+## Getting Started
+### Run App Locally
+
+1. run `npm run start:dev`
+
+### Run App with Docker
+
+1. Make sure docker is running on your system
+2. run `docker compuse up dev`
+
+### Add Data to DB
+1. run `npm run seed` on the root directory of the project
+
+## APIs
+### `POST /auth/login`
+```
+body: {
+  username,
+  password
+}
+
+response: {
+  access_token
+}
+```
+#### Test Users
+```
+[
+    {
+      userId: 1,
+      username: 'john',
+      password: 'changeme',
+    },
+    {
+      userId: 2,
+      username: 'maria',
+      password: 'guess',
+    },
+]
+```
+
+### `GET /product/all`
+```
+headers: {
+  Authorization: `Bearer ${access_token}`
+}
+
+response: List of Products
+
+```
+
+### `GET /category/all`
+```
+headers: {
+  Authorization: `Bearer ${access_token}`
+}
+
+response: List of Categories
+
+```
+
+### `GET /product/discount/{{product_id}}`
+```
+headers: {
+  Authorization: `Bearer ${access_token}`
+}
+
+response: {
+  data: discount in percentage
+}
+
+```
