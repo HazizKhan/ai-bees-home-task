@@ -2,7 +2,7 @@
 - [Introduction](#Introduction)
 - [Tech Stack](#TechStack)
 - [Setup](#Setup)
-- [Getting Started](#Getting Started)
+- [GettingStarted](#GettingStarted")
 - [APIs](#APIs)
 
 ## Introduction
@@ -21,7 +21,7 @@ Test done by Haziz Feroz Khan()
 1. Install dependecies with `npm install` or `yarn`
 2. Add `.env` file for reference you can check `.env.sample`
 
-## Getting Started
+## GettingStarted
 ### Run App Locally
 
 1. run `npm run start:dev`
